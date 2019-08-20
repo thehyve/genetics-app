@@ -2,7 +2,7 @@
 # and the 2nd stage sets up the latest nginx:alpine.
 
 # ============================== node/build section =====================================================
-FROM node:8.15-alpine as build_section
+FROM node:12.8.0-alpine as build_section
 
 ARG REACT_APP_GRAPHQL_API_URL=https://genetics-api.opentargets.io
 ARG REACT_APP_PLATFORM_URL=https://targetvalidation.org
@@ -14,7 +14,7 @@ WORKDIR /app
 RUN yarn install && yarn build
 
 # ============================== nginx section =====================================================
-FROM nginx:1.16-alpine
+FROM nginx:1.17.2-alpine
 
 
 # copy nginx configuration file
