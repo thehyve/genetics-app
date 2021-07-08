@@ -13,10 +13,11 @@ import TagManager from 'react-gtm-module';
 import App from './App';
 import { unregister } from './registerServiceWorker';
 import config from './config';
+import { graphqlApiUrl } from './configuration';
 
 const client = new ApolloClient({
   link: new HttpLink({
-    uri: config.apiUrl,
+    uri: graphqlApiUrl,
   }),
   cache: new InMemoryCache(),
 });
